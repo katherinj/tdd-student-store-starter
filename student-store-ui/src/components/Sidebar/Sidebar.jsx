@@ -1,10 +1,13 @@
 import * as React from "react"
 import "./Sidebar.css"
 
-export default function Sidebar() {
+export default function Sidebar({ isOpen, shoppingCart, products, checkoutForm, handleOnCheckoutFormChange, handleOnSubmityCheckoutForm, handleOnToggle}) {
+  
   return (
     <section className="sidebar">
-      <p>Sidebar</p>
+      <button className={isOpen ? "toggle-button open" : "toggle-button closed"} onClick={handleOnToggle} >
+        <i className="material-icons md-48">arrow_forward</i>
+      </button>
     </section>
   )
 }
