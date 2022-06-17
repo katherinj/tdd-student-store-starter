@@ -5,7 +5,7 @@
     padding: 0px;
     margin: 0px;
 }
-.display {
+.hero-content{
     background: #00c385;
     max-width: 800px;
     width: 100%;
@@ -16,6 +16,7 @@
     justify-content: space-between;
     height: 350px;
 }
+
 .intro {
     flex: 1;
     padding: 0 40px;

@@ -37,11 +37,11 @@ export default function App() {
   //handler functions
   const handleOnToggle = () => { setIsOpen(!isOpen) }
   const handleAddItemToCart = (productId) => {
-    
-    // adds that product to the shoppingCart if it doesn't exist, and set its quantity to 1.
-    // If it does exist, it should increase the quantity by 1.
-    // adds the price of the product to the total price of the shoppingCart.
-
+    console.log("added item")
+    if(shoppingCart.indexOf(productId)<=-1){
+      let item = [productId, 1]
+      setShoppingCart(newShoppingCart => [...shoppingCart, item])
+    } 
   }
   const handleRemoveItemFromCart = (productId) => {}
   const handleOnSubmitCheckoutForm = () => {}
@@ -55,10 +55,19 @@ export default function App() {
           <Sidebar handleOnToggle={handleOnToggle} isOpen={isOpen}/>
           
           <Routes>
-            <Route path="/" element={<Home products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemFromCart}/>}/>
+            <Route path="/" element={<Home products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemFromCart} shoppingCart={shoppingCart} category="" />}/>
+            
             <Route path="/products/:productId" element={<ProductDetail />} />
             <Route path="/#About" element="#About"/>
             <Route path="*"/>
+          
+            <Route path="/Clothing" element={<Home products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemFromCart} shoppingCart={shoppingCart} category="clothing" />}></Route>
+          
+            <Route path="/Food" element={<Home products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemFromCart} shoppingCart={shoppingCart} category="food" />}></Route>
+          
+            <Route path="/Accessories" element={<Home products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemFromCart} shoppingCart={shoppingCart} category="accessories" />}></Route>
+          
+            <Route path="/Tech" element={<Home products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemFromCart} shoppingCart={shoppingCart} category="tech" />}></Route>
           </Routes>
         </main>
       </BrowserRouter>

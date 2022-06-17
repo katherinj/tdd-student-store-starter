@@ -12,11 +12,8 @@ export default function Navbar() {
         <Link to="/">
           <Logo />
         </Link>
-
-         <Socials />
-
+        <Socials />
         <Links />
-
       </div>
     </nav>
   )

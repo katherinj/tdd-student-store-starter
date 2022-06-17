@@ -14,19 +14,46 @@ export default function ProductCard( {product, productId, quantity, handleAddIte
       
       </div>
       <div className="product-info">
-        <div className="main-info">
-          <div className="product-name"> {product.name} </div>
-          <div className="product-price"> {product.price} </div>       
-          <div className="description">{product.description}</div>
-        </div>
+        
+        <TextInfo name={product.name} price={product.price} description={product.description} showDescription={showDescription} />
+        
         <div className="actions">
-            <div className="buttonArea">
-              <button className="add" onClick={handleAddItemToCart(productId)}> + </button>
-              <button className="remove" onClick={handleRemoveItemToCart(productId)}> - </button>
-            </div>
-          <div className="product-quantity"> {quantity} </div>
+          
+          <ProductButtons productId={productId} handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemToCart}/>
+          <Quantity quantity={quantity}/>
+        
         </div>
       </div>
     </div>
   )
 }
+
+export function TextInfo({name, price, description, showDescription}){
+  return (
+    <div className="main-info">
+      <div className="product-name"> {name} </div>
+      <div className="product-price"> {price} </div>
+      {showDescription ? <div className="description">{description}</div> : <></>}       
+
+    </div>
+  )
+
+}
+
+export function ProductButtons({ productId, handleAddItemToCart, handleRemoveItemToCart }) {
+  return (
+    <div className="button-area">
+      <button className="add" onClick={() => handleAddItemToCart(productId)}> + </button>
+      <button className="remove" onClick={() => handleRemoveItemToCart(productId)}> - </button>
+  </div>
+  )
+}
+
+export function Quantity({quantity}) {
+  return (
+    <span className="product-quantity">
+      <span className="amount">{quantity}</span>
+    </span>
+  )
+}
+

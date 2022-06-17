@@ -7,7 +7,7 @@ import "./Hero.css"
 export default function Hero() {
     return (
       <div className="hero">
-        <div className="display">
+        <div className="hero-content">
           <div className="intro"> 
             <h1>Welcome!</h1>
             <h1>Find your merch! </h1>

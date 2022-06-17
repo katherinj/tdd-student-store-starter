@@ -14,7 +14,7 @@
 .product-info{
     flex: 1;
     display: flex;
-    border-top: solid 1px blue;
+    /* border-top: solid 1px; */
 }
 .main-info{
     flex: 1;
@@ -25,6 +25,20 @@
 .actions{
     width: 80px;
 }
-.btn{
+.button-area{
+    
+    display: flex;
+    outline: none;
+    border: none;
     background: transparent;
+    padding: 0;
+    cursor: pointer;
+    max-height: fit-content;
+    max-width: fit-content;
+    margin: 10px 5px;
+}
+}
+.product-card.main-info{
+    font-size: 15px;
+    font-weight: 500;
 }

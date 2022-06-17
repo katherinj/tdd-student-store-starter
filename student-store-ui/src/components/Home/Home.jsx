@@ -4,11 +4,11 @@ import About from "../About/About"
 import "./Home.css"
 import Hero from "../Hero/Hero"
 
-export default function Home({products, handleAddItemToCart, handleRemoveItemToCart}) {
+export default function Home({products, handleAddItemToCart, handleRemoveItemToCart, shoppingCart, category}) {
   return (
     <div className="home">
       <Hero />
-      <ProductGrid products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemToCart}/>
+      <ProductGrid products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemToCart} shoppingCart={shoppingCart} category={category}/>
       <About />
     </div>
   )

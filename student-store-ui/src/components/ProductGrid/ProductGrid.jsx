@@ -3,14 +3,17 @@ import "./ProductGrid.css"
 import ProductCard from "../ProductCard/ProductCard"
 import Search from "../Search/Search"
 
-export default function ProductGrid({products, handleAddItemToCart, handleRemoveItemToCart}) {
-    
+export default function ProductGrid({products, handleAddItemToCart, handleRemoveItemToCart, shoppingCart, category}) {
+  let productList = products;
+  if(category!=""){
+      productList = productList.filter(product => product.category == category)
+  }
   return (
       <>
-        {/* <Search /> */}
+        <Search />
         <div className="product-grid">
-          {products.map((product) => 
-          <ProductCard product={product} showDescription="false" handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemToCart} key={product.id} />        
+          {productList.map((product) => 
+          <ProductCard product={product} showDescription="false" handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemToCart} key={product.id} productId={product.id} shoppingCart={shoppingCart}/>        
         )}
         </div>
       </>
