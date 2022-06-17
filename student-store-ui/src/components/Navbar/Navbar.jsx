@@ -1,6 +1,8 @@
 import * as React from "react"
 import "./Navbar.css"
 import Logo from "../Logo/Logo"
+import Socials from "../Socials/Socials"
+import Links from "../Links/Links"
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
 
 export default function Navbar() {
@@ -11,12 +13,9 @@ export default function Navbar() {
           <Logo />
         </Link>
 
-        {/* <Social />
+         <Socials />
 
-        <Links /> 
-        <ul className="links">
-
-        </ul> */}
+        <Links />
 
       </div>
     </nav>

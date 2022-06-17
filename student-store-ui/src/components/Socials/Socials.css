@@ -1,0 +1,17 @@
+.socials{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100px;
+    margin-right: 50px;
+}
+.twitter{
+
+}
+.instagram{
+
+}
+.facebook{
+
+}

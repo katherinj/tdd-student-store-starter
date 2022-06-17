@@ -54,13 +54,12 @@ export default function App() {
           <Navbar />
           <Sidebar handleOnToggle={handleOnToggle} isOpen={isOpen}/>
           
-          
-          {/* 
           <Routes>
-          <Route path="/" element={<Home products={products}/>}/>
-          <Route path="/products/:productId" element={<ProductDetail />} />
-          <Route path="*"/>
-        </Routes> */}
+            <Route path="/" element={<Home products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemFromCart}/>}/>
+            <Route path="/products/:productId" element={<ProductDetail />} />
+            <Route path="/#About" element="#About"/>
+            <Route path="*"/>
+          </Routes>
         </main>
       </BrowserRouter>
     </div>
