@@ -4,11 +4,13 @@ import {Link} from "react-router-dom"
 
 export default function ProductCard( {product, productId, quantity, handleAddItemToCart, handleRemoveItemToCart, showDescription}) {
 
+  let url = "/products/" + productId
+
   return (
     <div className="product-card">
       <div className="media">
         
-        <Link to="products/{productId" >
+        <Link to={url} productid={productId}>
           <img src={product.image} alt="" />
         </Link>
       
@@ -29,15 +31,15 @@ export default function ProductCard( {product, productId, quantity, handleAddIte
 }
 
 export function TextInfo({name, price, description, showDescription}){
+  let currency = Intl.NumberFormat('en-US')
   return (
     <div className="main-info">
       <div className="product-name"> {name} </div>
-      <div className="product-price"> {price} </div>
-      {showDescription ? <div className="description">{description}</div> : <></>}       
+      <div className="product-price"> ${currency.format(price)} </div>
+      {/* {showDescription ? <div className="description">{description}</div> : <></>}        */}
 
     </div>
   )
-
 }
 
 export function ProductButtons({ productId, handleAddItemToCart, handleRemoveItemToCart }) {
@@ -52,7 +54,7 @@ export function ProductButtons({ productId, handleAddItemToCart, handleRemoveIte
 export function Quantity({quantity}) {
   return (
     <span className="product-quantity">
-      <span className="amount">{quantity}</span>
+      {/* <span className="amount">{quantity}</span> */}
     </span>
   )
 }

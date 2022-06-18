@@ -17,11 +17,11 @@ export default function Search() {
                     </span>
                     <div className="cart">
                         My Cart
-                        <i class="material-icons">shopping_cart</i>
+                        <i className="material-icons">shopping_cart</i>
                     </div>
                 </div>
             </div>
-            <div className="row">
+            <div className="row categoryrow">
                 <Categories/>
             </div>
         </div>

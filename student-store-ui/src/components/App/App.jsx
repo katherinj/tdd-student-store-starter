@@ -36,14 +36,17 @@ export default function App() {
 
   //handler functions
   const handleOnToggle = () => { setIsOpen(!isOpen) }
+
   const handleAddItemToCart = (productId) => {
-    console.log("added item")
+    console.log("added item id: " + productId + " index: " + shoppingCart.indexOf(productId))
     if(shoppingCart.indexOf(productId)<=-1){
       let item = [productId, 1]
       setShoppingCart(newShoppingCart => [...shoppingCart, item])
     } 
   }
+  
   const handleRemoveItemFromCart = (productId) => {}
+  
   const handleOnSubmitCheckoutForm = () => {}
 
   return (
@@ -56,8 +59,8 @@ export default function App() {
           
           <Routes>
             <Route path="/" element={<Home products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemFromCart} shoppingCart={shoppingCart} category="" />}/>
-            
-            <Route path="/products/:productId" element={<ProductDetail />} />
+
+            <Route path="/products/:productId" element={<ProductDetail producds={products}/>} />
             <Route path="/#About" element="#About"/>
             <Route path="*"/>
           
