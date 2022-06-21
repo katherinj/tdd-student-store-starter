@@ -1,17 +1,16 @@
 import * as React from "react"
-import ProductGrid from "../ProductGrid/ProductGrid"
-import About from "../About/About"
-import "./Home.css"
 import Hero from "../Hero/Hero"
-import Footer from "../Footer/Footer"
+import Search from "../Search/Search"
+import ProductGrid from "../ProductGrid/ProductGrid"
+import "./Home.css"
 
-export default function Home({products, handleAddItemToCart, handleRemoveItemToCart, shoppingCart, category}) {
+
+export default function Home({ products, handleAddItemToCart, handleRemoveItemToCart, shoppingCart, category }) {
   return (
     <div className="home">
       <Hero />
+      <Search />
       <ProductGrid products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemToCart} shoppingCart={shoppingCart} category={category}/>
-      <About />
-      <Footer />
     </div>
   )
 }
