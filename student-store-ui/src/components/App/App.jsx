@@ -44,7 +44,9 @@ export default function App() {
   }
   const handleRemoveItemFromCart = (productId) => {}
   const handleOnSubmitCheckoutForm = () => {}
-
+  const handleOnChange = () => {
+    
+  }
   return (
     <div className="app"> 
       <BrowserRouter> 
@@ -53,7 +55,7 @@ export default function App() {
           <Sidebar handleOnToggle={handleOnToggle} isOpen={isOpen}/>
           
           <Routes>
-            <Route path="/" element={<Home products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemFromCart} shoppingCart={shoppingCart} category="" />}/>
+            <Route path="/" element={<Home products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemFromCart} shoppingCart={shoppingCart} category="" handleOnChange={handleOnChange}/>}/>
 
             <Route path="/products/:productId" element={<ProductDetail products={products}/>}></Route>
 

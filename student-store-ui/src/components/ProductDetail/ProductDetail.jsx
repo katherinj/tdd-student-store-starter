@@ -27,7 +27,19 @@ export default function ProductDetail({handleAddItemToCart, handleRemoveItemToCa
   console.log("product id: " + products[productId])
   return (
     <div className="product-detail">
-      <p>Product Detail for {product}</p>
+      <div className="product-view">
+        <h1 className="product-id"> Product #{products.id}</h1>
+      </div>
+      <div className="product-view-card">
+        <div className="media">
+          <img src={products[productId].image} alt="" />
+          <div className="product-info">
+            <div className="main-info">
+              <p className="product-name"> {products[productId].name}</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

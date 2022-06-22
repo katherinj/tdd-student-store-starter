@@ -2,13 +2,13 @@ import * as React from "react"
 import "./Search.css"
 import {Link} from "react-router-dom"
 
-export default function Search() {
+export default function Search({handleOnChange}) {
   return (
     <div className="search-area">
         <div className="content">
             <div className="row">
                 <div className="search-bar">
-                    <input className="search-input" type="text" name="search" placeholder="Search"/>
+                    <input className="search-input" type="text" name="search" placeholder="Search" onChange={handleOnChange}/>
                     <i className="material-icons">search</i>
                 </div>
                 <div className="links">

@@ -5,11 +5,11 @@ import ProductGrid from "../ProductGrid/ProductGrid"
 import "./Home.css"
 
 
-export default function Home({ products, handleAddItemToCart, handleRemoveItemToCart, shoppingCart, category }) {
+export default function Home({ products, handleAddItemToCart, handleRemoveItemToCart, shoppingCart, category, handleOnChange }) {
   return (
     <div className="home">
       <Hero />
-      <Search />
+      <Search handleOnChange={handleOnChange}/>
       <ProductGrid products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemToCart} shoppingCart={shoppingCart} category={category}/>
     </div>
   )

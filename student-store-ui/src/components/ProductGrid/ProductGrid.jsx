@@ -7,6 +7,7 @@ export default function ProductGrid({products, handleAddItemToCart, handleRemove
   if(category!=""){
       productList = productList.filter(product => product.category == category)
   }
+  
   return (
       <>
         <div className="product-grid">
