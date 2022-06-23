@@ -24,18 +24,17 @@ export default function ProductDetail({handleAddItemToCart, handleRemoveItemToCa
     fetchData();
   }, [])
 
-  console.log("product id: " + products[productId])
   return (
     <div className="product-detail">
       <div className="product-view">
-        <h1 className="product-id"> Product #{products.id}</h1>
+        <h1 className="product-id"> Product #{productId}</h1>
       </div>
       <div className="product-view-card">
         <div className="media">
-          <img src={products[productId].image} alt="" />
+          <img src={products[productId-1].image} alt="" />
           <div className="product-info">
             <div className="main-info">
-              <p className="product-name"> {products[productId].name}</p>
+              <p className="product-name"> {products[productId-1].name}</p>
             </div>
           </div>
         </div>

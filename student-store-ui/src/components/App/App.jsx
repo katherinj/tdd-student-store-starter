@@ -19,7 +19,7 @@ export default function App() {
   const [isOpen, setIsOpen] = useState(false) 
   const [shoppingCart, setShoppingCart] = useState([])
   const [checkoutForm, setCheckoutForm] = useState()
-
+  const [searchText, setSearchText] = useState("")
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios.get("https://codepath-store-api.herokuapp.com/store")
@@ -55,7 +55,7 @@ export default function App() {
           <Sidebar handleOnToggle={handleOnToggle} isOpen={isOpen}/>
           
           <Routes>
-            <Route path="/" element={<Home products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemFromCart} shoppingCart={shoppingCart} category="" handleOnChange={handleOnChange}/>}/>
+            <Route path="/" element={<Home products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemFromCart} shoppingCart={shoppingCart} category="" />}/>
 
             <Route path="/products/:productId" element={<ProductDetail products={products}/>}></Route>
 
