@@ -21,7 +21,7 @@
 }
 
 .open {
-    width: 120px;
+    width: 575px;
 }
 
 .closed {
@@ -36,6 +36,22 @@
     border: none;
     cursor: pointer;
 }
+
 .material-icons.md-48{
     font-size: 40px;
+}
+
+.shopping-cart .cart-icons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    width: 100%;
+    padding-left: 0.5rem;
+}
+
+.sidebar i{
+    margin-right: 10px;
+    cursor: pointer;
+    color: #fff;
 }
