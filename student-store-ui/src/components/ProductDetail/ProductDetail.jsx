@@ -1,44 +1,47 @@
-import * as React from "react"
-import "./ProductDetail.css"
-import { useState , useEffect} from "react"
-import { useParams } from "react-router-dom"
-import axios from "axios"
+import * as React from "react";
+import "./ProductDetail.css";
+import ProductView from "../ProductView/ProductView";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
-
-export default function ProductDetail({handleAddItemToCart, handleRemoveItemToCart, products}) {
-  const [product, setProduct] = useState()
+export default function ProductDetail({
+  handleAddItemToCart,
+  handleRemoveItemToCart,
+  products,
+  setIsLoading,
+  isLoading,
+}) {
+  const [product, setProduct] = useState({});
   let { productId } = useParams();
-  let example = 1;
-
   useEffect(() => {
+    setIsLoading(true);
     const fetchData = async () => {
-      const result = await axios.get("https://codepath-store-api.herokuapp.com/store/"+example)
-  
-      if(result?.data?.products){
-        setProduct(result.data.products) 
-      }else{
-        setError("error no products")
-
+      const result = await axios.get(
+        "https://codepath-store-api.herokuapp.com/store/" + productId
+      );
+      if (result?.data?.product) {
+        setProduct(result.data.product);
+      } else {
+        setError("error no products");
       }
-    }
+    };
     fetchData();
-  }, [])
+    setIsLoading(false);
+  }, []);
 
   return (
     <div className="product-detail">
-      <div className="product-view">
-        <h1 className="product-id"> Product #{productId}</h1>
-      </div>
-      <div className="product-view-card">
-        <div className="media">
-          <img src={products[productId-1].image} alt="" />
-          <div className="product-info">
-            <div className="main-info">
-              <p className="product-name"> {products[productId-1].name}</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      {isLoading ? (
+        <h1>Loading...</h1>
+      ) : (
+        <ProductView
+          product={product}
+          productId={productId}
+          handleAddItemToCart={handleAddItemToCart}
+          handleRemoveItemToCart={handleRemoveItemToCart}
+        />
+      )}
     </div>
-  )
+  );
 }
