@@ -1,61 +1,59 @@
-.shopping-cart h3{
+.shopping-cart{
+    margin: 10px;
+}
+.shopping-cart h3, .notification{
     color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.cart-table{
-    width: 100%;
-    margin: 0 10px;
-}
-
 .cart-table .header{
     display: flex;
-    flex-direction: row;
-    background: #2c4047;
-    border: solid 1px #2c4047;
+    flex-direction: column;
+    background: whitesmoke;
+    border: solid 1px grey;
     border-radius: 4px;
     width: 100%;
 }
-
-.cart-header .header-row{
+.header-row{
     display: flex;
     height: 50px;
     background: #2c4047;
     margin-bottom: 15px;
 }
 
-span.flex-2{
+.header-row span{
     flex: 1;
-    color: white;
+    color: whitesmoke;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     font-size: 17px;
     font-weight: 600;
-    margin-left: 15px;
+    margin-left: 15px; 
 }
-span.center{
-    flex: 1;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    font-size: 17px;
-    font-weight: 600;
-    margin-left: 15px;
-}
-
-.cart-header .header-row span.center{
-    display: flex;
-    justify-content: center;
-}
-
-.shopping-cart .product-row{
+.product-row{
     display: flex;
     flex-direction: row;
     padding-bottom: 20px;
     margin-top: 10px;
-    border-bottom: solid 1px white;
+    border-bottom: solid 1px whitesmoke;
+}
+.product-row span{
+    flex: 1;
+}
+.receipt{
+    display: flex;
+    flex-direction: column;
+    background: whitesmoke;
+    border-radius: 4px;
+    width: 100%;
+    margin-top: 10px;
+}
+.receipt-subtotal, .receipt-taxes, .receipt-total{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
 }

@@ -9,6 +9,7 @@ export default function ProductGrid({
   shoppingCart,
   category,
   searchTerm,
+  formatter,
 }) {
   let productList = products;
   if (category != "") {
@@ -34,6 +35,7 @@ export default function ProductGrid({
             key={product.id}
             productId={product.id}
             shoppingCart={shoppingCart}
+            formatter={formatter}
           />
         ))}
       </div>

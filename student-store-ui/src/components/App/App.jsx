@@ -18,15 +18,20 @@ export default function App() {
   const [error, setError] = useState("Error");
   const [isOpen, setIsOpen] = useState(false);
   const [shoppingCart, setShoppingCart] = useState([]);
-  const [checkoutForm, setCheckoutForm] = useState();
+  const [checkoutForm, setCheckoutForm] = useState([{ name: "", email: "" }]);
   const [searchText, setSearchText] = useState("");
   const [deatilIsLoading, setDetailIsLoading] = useState(false);
+  const [showReceipt, setShowReceipt] = useState(false);
+  const [receiptInfo, setReceiptInfo] = useState([]);
+  const formatMoney = Intl.NumberFormat("en-US", {
+    currency: "USD",
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios.get(
-        "https://codepath-store-api.herokuapp.com/store"
-      );
+      const result = await axios.get("http://localhost:3001/store");
 
       if (result?.data?.products) {
         setProducts(result.data.products);
@@ -42,27 +47,70 @@ export default function App() {
   };
   const handleAddItemToCart = (productId) => {
     let shoppingCartCopy = [...shoppingCart];
+
     if (shoppingCart.some((p) => p.itemId == productId)) {
       shoppingCartCopy.map((p) =>
         p.itemId == productId ? p.quantity++ : null
       );
+
       setShoppingCart(shoppingCartCopy);
     } else {
+      setShowReceipt(false);
       let item = { itemId: productId, quantity: 1 };
-      setShoppingCart((newShoppingCart) => [...shoppingCart, item]);
+      setShoppingCart([...shoppingCart, item]);
     }
   };
   const handleRemoveItemFromCart = (productId) => {
     let shoppingCartCopy = [...shoppingCart];
-
+    let index = -1;
+    let itemToRemove = -1;
     if (shoppingCart.some((p) => p.itemId == productId)) {
-      shoppingCartCopy.map((p) =>
-        p.itemId == productId ? p.quantity-- : null
-      );
+      shoppingCartCopy.map((p) => {
+        index++;
+        p.itemId == productId ? p.quantity-- : null;
+        if (p.quantity == 0) {
+          itemToRemove = index;
+        }
+      });
+      if (itemToRemove > -1) {
+        shoppingCartCopy.splice(itemToRemove, 1);
+      }
       setShoppingCart(shoppingCartCopy);
     }
   };
-  const handleOnSubmitCheckoutForm = () => {};
+
+  const handleOnCheckoutFormChange = (name, value) => {
+    let previousInfo = { name: checkoutForm.name, email: checkoutForm.email };
+    if (name == "name") {
+      previousInfo.name = value;
+      setCheckoutForm(previousInfo);
+    } else {
+      previousInfo.email = value;
+      setCheckoutForm(previousInfo);
+    }
+  };
+  const handleOnSubmitCheckoutForm = async () => {
+    let userInfo = { name: checkoutForm.name, email: checkoutForm.name };
+    let newPurchase = { user: userInfo, shoppingCart: shoppingCart };
+    try {
+      axios.post("http://localhost:3001/purchases", {
+        purchase: newPurchase,
+      });
+      setShoppingCart([]);
+      setCheckoutForm({ name: "", email: "" });
+      setShowReceipt(true);
+    } catch (err) {
+      setError(err);
+    }
+
+    //post request goes here
+    //if post is successful,
+    //set show receipt to true
+    //empty shoppingncart
+    //reset checkoutform to default state
+    //else
+    //display an error message inside a div className="error"
+  };
 
   return (
     <div className="app">
@@ -70,12 +118,16 @@ export default function App() {
         <main>
           <Navbar />
           <Sidebar
-            handleOnToggle={handleOnToggle}
             isOpen={isOpen}
             shoppingCart={shoppingCart}
             products={products}
+            checkoutForm={checkoutForm}
+            handleOnCheckoutFormChange={handleOnCheckoutFormChange}
+            handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
+            handleOnToggle={handleOnToggle}
+            formatter={formatMoney}
+            showReceipt={showReceipt}
           />
-
           <Routes>
             <Route
               path="/"
@@ -86,6 +138,7 @@ export default function App() {
                   handleRemoveItemToCart={handleRemoveItemFromCart}
                   shoppingCart={shoppingCart}
                   category=""
+                  formatter={formatMoney}
                 />
               }
             />
@@ -99,6 +152,7 @@ export default function App() {
                   handleRemoveItemToCart={handleRemoveItemFromCart}
                   setIsLoading={setDetailIsLoading}
                   isLoading={deatilIsLoading}
+                  formatter={formatMoney}
                 />
               }
             ></Route>
@@ -115,6 +169,7 @@ export default function App() {
                   handleRemoveItemToCart={handleRemoveItemFromCart}
                   shoppingCart={shoppingCart}
                   category="clothing"
+                  formatter={formatMoney}
                 />
               }
             ></Route>
@@ -128,6 +183,7 @@ export default function App() {
                   handleRemoveItemToCart={handleRemoveItemFromCart}
                   shoppingCart={shoppingCart}
                   category="food"
+                  formatter={formatMoney}
                 />
               }
             ></Route>
@@ -141,6 +197,7 @@ export default function App() {
                   handleRemoveItemToCart={handleRemoveItemFromCart}
                   shoppingCart={shoppingCart}
                   category="accessories"
+                  formatter={formatMoney}
                 />
               }
             ></Route>
@@ -154,6 +211,7 @@ export default function App() {
                   handleRemoveItemToCart={handleRemoveItemFromCart}
                   shoppingCart={shoppingCart}
                   category="tech"
+                  formatter={formatMoney}
                 />
               }
             ></Route>

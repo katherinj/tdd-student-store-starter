@@ -11,6 +11,7 @@ export default function ProductDetail({
   products,
   setIsLoading,
   isLoading,
+  formatter,
 }) {
   const [product, setProduct] = useState({});
   let { productId } = useParams();
@@ -18,7 +19,7 @@ export default function ProductDetail({
     setIsLoading(true);
     const fetchData = async () => {
       const result = await axios.get(
-        "https://codepath-store-api.herokuapp.com/store/" + productId
+        "http://localhost:3001/store/" + productId
       );
       if (result?.data?.product) {
         setProduct(result.data.product);
@@ -40,6 +41,7 @@ export default function ProductDetail({
           productId={productId}
           handleAddItemToCart={handleAddItemToCart}
           handleRemoveItemToCart={handleRemoveItemToCart}
+          formatter={formatter}
         />
       )}
     </div>

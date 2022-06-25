@@ -9,9 +9,12 @@ export default function Sidebar({
   products,
   checkoutForm,
   handleOnCheckoutFormChange,
-  handleOnSubmityCheckoutForm,
+  handleOnSubmitCheckoutForm,
   handleOnToggle,
+  formatter,
+  showReceipt,
 }) {
+  let number = 0.324423;
   return (
     <section className={isOpen ? "sidebar open" : "sidebar closed"}>
       <div className="wrapper">
@@ -23,7 +26,16 @@ export default function Sidebar({
         </button>
 
         {isOpen ? (
-          <OpenSideBar shoppingCart={shoppingCart} products={products} />
+          <OpenSideBar
+            shoppingCart={shoppingCart}
+            products={products}
+            checkoutForm={checkoutForm}
+            isOpen={isOpen}
+            handleOnCheckoutFormChange={handleOnCheckoutFormChange}
+            handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
+            formatter={formatter}
+            showReceipt={showReceipt}
+          />
         ) : (
           <ClosedSideBar />
         )}
@@ -32,11 +44,32 @@ export default function Sidebar({
   );
 }
 
-export function OpenSideBar({ shoppingCart, products }) {
+export function OpenSideBar({
+  shoppingCart,
+  products,
+  checkoutForm,
+  isOpen,
+  handleOnCheckoutFormChange,
+  handleOnSubmitCheckoutForm,
+  formatter,
+  showReceipt,
+}) {
   return (
     <div>
-      <ShoppingCart shoppingCart={shoppingCart} products={products} />
-      <CheckoutForm />
+      <ShoppingCart
+        shoppingCart={shoppingCart}
+        products={products}
+        formatter={formatter}
+        showReceipt={showReceipt}
+      />
+      <CheckoutForm
+        isOpen={isOpen}
+        shoppingCart={shoppingCart}
+        checkoutForm={checkoutForm}
+        handleOnCheckoutFormChange={handleOnCheckoutFormChange}
+        handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
+        showReceipt={showReceipt}
+      />
     </div>
   );
 }

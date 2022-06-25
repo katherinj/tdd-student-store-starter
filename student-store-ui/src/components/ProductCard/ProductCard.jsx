@@ -9,6 +9,7 @@ export default function ProductCard({
   handleAddItemToCart,
   handleRemoveItemToCart,
   showDescription,
+  formatter,
 }) {
   let url = "/products/" + productId;
 
@@ -22,7 +23,7 @@ export default function ProductCard({
       <div className="product-info">
         <TextInfo
           name={product.name}
-          price={product.price}
+          price={formatter.format(product.price)}
           description={product.description}
           showDescription={showDescription}
         />
@@ -41,12 +42,10 @@ export default function ProductCard({
 }
 
 export function TextInfo({ name, price, description, showDescription }) {
-  let currency = Intl.NumberFormat("en-US");
-  console.log(showDescription);
   return (
     <div className="main-info">
       <div className="product-name"> {name} </div>
-      <div className="product-price"> ${currency.format(price)} </div>
+      <div className="product-price"> ${price} </div>
       {showDescription ? (
         <div className="description">{description}</div>
       ) : (

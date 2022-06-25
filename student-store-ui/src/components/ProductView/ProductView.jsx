@@ -8,8 +8,8 @@ export default function ProductView({
   quantity,
   handleAddItemToCart,
   handleRemoveItemToCart,
+  formatter,
 }) {
-  console.log("Product view product: ", product);
   return (
     <div className="product-view">
       <h1 className="product-id"> Product # {productId} </h1>
@@ -21,6 +21,7 @@ export default function ProductView({
         handleAddItemToCart={handleAddItemToCart}
         handleRemoveItemToCart={handleRemoveItemToCart}
         showDescription={true}
+        formatter={formatter}
       />
     </div>
   );

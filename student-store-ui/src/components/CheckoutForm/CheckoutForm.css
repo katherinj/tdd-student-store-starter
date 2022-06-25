@@ -1,0 +1,63 @@
+.checkout-form>h3{
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-field{
+    width: 90%;
+    margin: 5px 0;
+}
+
+.input-field .label{
+    color: #fff;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+.input-field input{
+    width: 100%;
+    height: 36px;
+    padding: 0 15px;
+    border-radius: 8px;
+    border: solid 1px #e4e4e4;
+    flex: 1;
+    font-size: 16px;
+    margin: 10px;
+}
+.checkout-form .button-area{
+    margin-left: 50px;
+}
+.checkout-form .button-area button{
+    margin-top: 10px;
+    margin-left: 20px;
+    padding: 12px 18px;
+    font-size: 18px;
+    cursor: pointer;
+    background: transparent;
+    border: solid 1px white;
+    color: #fff;
+}
+
+.checkout-success{
+    width: 100%;
+    padding: 1rem;
+}
+.checkout-success>h3{
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkout-success .card{
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+.card .card-title{
+    color: #fff;
+    font-weight: 20px;
+    margin-bottom: 5px;
+}

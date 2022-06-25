@@ -145,5 +145,511 @@
       "price": 999.99
     }
   ],
-  "purchases": []
+  "purchases": [
+    {
+      "id": 1,
+      "postedAt": "2022-06-24T18:25:11.551Z",
+      "name": "name",
+      "email": "email",
+      "shoppingCart": [
+        {
+          "itemId": 0,
+          "quantity": 3
+        },
+        {
+          "itemId": 3,
+          "quantity": 4
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "postedAt": "2022-06-24T18:39:16.089Z",
+      "user": {
+        "name": "klfs",
+        "email": "klfs"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 1,
+          "quantity": 3
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "postedAt": "2022-06-24T18:40:00.571Z",
+      "user": {
+        "name": "fkjdlsa",
+        "email": "fkjdlsa"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 1,
+          "quantity": 3
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "postedAt": "2022-06-24T18:41:22.546Z",
+      "user": "name",
+      "shoppingCart": [
+        {
+          "itemId": 0,
+          "quantity": 3
+        },
+        {
+          "itemId": 3,
+          "quantity": 4
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "postedAt": "2022-06-24T18:41:26.575Z",
+      "user": "name",
+      "shoppingCart": [
+        {
+          "itemId": 0,
+          "quantity": 3
+        },
+        {
+          "itemId": 3,
+          "quantity": 4
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "postedAt": "2022-06-24T18:41:29.817Z",
+      "user": "name",
+      "shoppingCart": [
+        {
+          "itemId": 0,
+          "quantity": 3
+        },
+        {
+          "itemId": 3,
+          "quantity": 4
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "postedAt": "2022-06-24T18:41:34.375Z",
+      "user": "name",
+      "shoppingCart": [
+        {
+          "itemId": 0,
+          "quantity": 3
+        },
+        {
+          "itemId": 3,
+          "quantity": 4
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "postedAt": "2022-06-24T18:44:21.594Z",
+      "user": {
+        "name": "fdmkal",
+        "email": "fdmkal"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 1,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "postedAt": "2022-06-24T18:56:06.170Z",
+      "user": "name",
+      "shoppingCart": [
+        {
+          "itemId": 0,
+          "quantity": 3
+        },
+        {
+          "itemId": 3,
+          "quantity": 4
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "postedAt": "2022-06-24T18:57:18.272Z",
+      "user": "name",
+      "shoppingCart": [
+        {
+          "itemId": 0,
+          "quantity": 3
+        },
+        {
+          "itemId": 3,
+          "quantity": 4
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "postedAt": "2022-06-24T18:57:19.710Z",
+      "user": "name",
+      "shoppingCart": [
+        {
+          "itemId": 0,
+          "quantity": 3
+        },
+        {
+          "itemId": 3,
+          "quantity": 4
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "postedAt": "2022-06-24T18:57:42.374Z",
+      "user": "name",
+      "shoppingCart": [
+        {
+          "itemId": 0,
+          "quantity": 3
+        },
+        {
+          "itemId": 3,
+          "quantity": 4
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "postedAt": "2022-06-24T18:58:09.568Z",
+      "user": {
+        "name": "jdfla",
+        "email": "jdfla"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 1,
+          "quantity": 1
+        },
+        {
+          "itemId": 2,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "postedAt": "2022-06-24T18:59:21.781Z",
+      "user": {
+        "name": "fdsa",
+        "email": "fdsa"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 1,
+          "quantity": 1
+        },
+        {
+          "itemId": 2,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "postedAt": "2022-06-24T19:15:05.086Z",
+      "user": {
+        "name": "fkdjl",
+        "email": "fkdjl"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 2,
+          "quantity": 3
+        },
+        {
+          "itemId": 6,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "postedAt": "2022-06-24T19:16:04.090Z",
+      "user": {},
+      "shoppingCart": [
+        {
+          "itemId": 1,
+          "quantity": 3
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "postedAt": "2022-06-24T19:19:32.194Z",
+      "user": {
+        "name": "fdsa",
+        "email": "fdsa"
+      },
+      "shoppingCart": [
+        {
+          "itemId": "1",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "postedAt": "2022-06-24T19:20:02.553Z",
+      "user": {
+        "name": "fjkdla",
+        "email": "fjkdla"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 1,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "postedAt": "2022-06-24T19:23:22.676Z",
+      "user": {
+        "name": "fdsakl",
+        "email": "fdsakl"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 2,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "postedAt": "2022-06-24T19:25:09.373Z",
+      "user": {
+        "name": "dfa",
+        "email": "dfa"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 2,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "postedAt": "2022-06-24T19:31:30.950Z",
+      "user": {
+        "name": "fkdla",
+        "email": "fkdla"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 2,
+          "quantity": 1
+        },
+        {
+          "itemId": 4,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "postedAt": "2022-06-24T19:34:41.863Z",
+      "user": {
+        "name": "fjklds",
+        "email": "fjklds"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 1,
+          "quantity": 1
+        },
+        {
+          "itemId": "12",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "postedAt": "2022-06-24T19:37:20.568Z",
+      "user": {
+        "name": "JKJL",
+        "email": "JKJL"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 2,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "postedAt": "2022-06-24T19:41:15.125Z",
+      "user": {
+        "name": "fdskslj",
+        "email": "fdskslj"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "postedAt": "2022-06-24T19:48:12.734Z",
+      "user": {
+        "name": "jklfd",
+        "email": "jklfd"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 3,
+          "quantity": 1
+        },
+        {
+          "itemId": 2,
+          "quantity": 3
+        },
+        {
+          "itemId": 8,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "postedAt": "2022-06-24T19:48:58.999Z",
+      "user": {
+        "name": "fdskjla",
+        "email": "fdskjla"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 1,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "postedAt": "2022-06-24T19:53:17.419Z",
+      "user": {
+        "name": "fdkal",
+        "email": "fdkal"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 2,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "postedAt": "2022-06-24T19:59:09.296Z",
+      "user": {
+        "name": "fjdskla",
+        "email": "fjdskla"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 3,
+          "quantity": 2
+        },
+        {
+          "itemId": 7,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "postedAt": "2022-06-24T20:22:59.422Z",
+      "user": {
+        "name": "fdskla",
+        "email": "fdskla"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 3,
+          "quantity": 1
+        },
+        {
+          "itemId": 6,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "postedAt": "2022-06-24T20:28:01.969Z",
+      "user": {
+        "name": "fdskl",
+        "email": "fdskl"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "postedAt": "2022-06-24T20:29:10.007Z",
+      "user": {
+        "name": "fmdksl",
+        "email": "fmdksl"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 2,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "postedAt": "2022-06-24T20:41:10.525Z",
+      "user": {
+        "name": "kdfls",
+        "email": "kdfls"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 3,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "postedAt": "2022-06-24T21:05:27.979Z",
+      "user": {
+        "name": "fda",
+        "email": "fda"
+      },
+      "shoppingCart": [
+        {
+          "itemId": 1,
+          "quantity": 1
+        }
+      ]
+    }
+  ]
 }
